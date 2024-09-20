@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="calculator-container">
+            <h1 class="centered-text">Calculator</h1>
+    
+            <div class="output-container">
+                <input type="hidden" name="current_value" value="{{input_value}}">
+                <input type="text" id="input_field" readonly class="output" name="input_field" value="{{ input_value }}">
+            </div>
+            <div class="AC-container">
+                <button type="submit" name="button" class="button" value="AC">AC</button>
+            </div>
+            <div class="button-container">
+                <button type="submit" name="button" class="button" value="7">7</button>
+                <button type="submit" name="button" class="button" value="8">8</button>
+                <button type="submit" name="button" class="button" value="9">9</button>
+                <button type="submit" name="button" class="button" value="/">/</button>
+                <button type="submit" name="button" class="button" value="4">4</button>
+                <button type="submit" name="button" class="button" value="5">5</button>
+                <button type="submit" name="button" class="button" value="6">6</button>
+                <button type="submit" name="button" class="button" value="*">*</button>
+                <button type="submit" name="button" class="button" value="1">1</button>
+                <button type="submit" name="button" class="button" value="2">2</button>
+                <button type="submit" name="button" class="button" value="3">3</button>
+                <button type="submit" name="button" class="button" value="+">+</button>
+                <button type="submit" name="button" class="button" value="0">0</button>
+                <button type="submit" name="button" class="button" value=".">.</button>
+                <button type="submit" name="button" class="button" value="-">-</button>
+                <button type="submit" name="button" class="button" value="=">=</button>
+            </div>
+        </div>
+    </form>
+    
+</html>
